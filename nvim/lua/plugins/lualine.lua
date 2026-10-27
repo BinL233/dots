@@ -3,6 +3,8 @@ return {
     -- dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
         local icons = require('icons')
+        -- Required eagerly so :PythonEnv is registered regardless of filetype.
+        local python = require('config.python')
         local diagnostics_icons = icons.get('diagnostics', true)
         local git_icons = icons.get('git', true)
 
@@ -106,6 +108,16 @@ return {
                 color_warn = { fg = colors.yellow },
                 color_info = { fg = colors.cyan },
             },
+        }
+
+        ins_right {
+            function()
+                return python.label()
+            end,
+            cond = function()
+                return vim.bo.filetype == 'python'
+            end,
+            color = { fg = colors.cyan },
         }
 
         ins_right {

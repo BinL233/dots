@@ -3,6 +3,17 @@ return -- lazy.nvim
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
+        cmdline = {
+            view = "cmdline",
+            format = {
+                cmdline = { pattern = "^:", icon = "󰘳 ", lang = "vim" },
+                search_down = { kind = "search", pattern = "^/", icon = "󰩊 ", lang = "regex" },
+                search_up = { kind = "search", pattern = "^%?", icon = "󰩊 ", lang = "regex" },
+                filter = { pattern = "^:%s*!", icon = "󰻿 ", lang = "bash" },
+                lua = { pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" }, icon = "", lang = "lua" },
+                help = { pattern = "^:%s*he?l?p?%s+", icon = "󰞋 " },
+            },
+        },
         lsp = {
             -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
             override = {
@@ -28,17 +39,4 @@ return -- lazy.nvim
         --   If not available, we use `mini` as the fallback
         "rcarriga/nvim-notify",
     },
-    require("noice").setup({
-        cmdline = {
-            view = "cmdline",
-            format = {
-                cmdline = { pattern = "^:", icon = "󰘳 ", lang = "vim" },
-                search_down = { kind = "search", pattern = "^/", icon = "󰩊 ", lang = "regex" },
-                search_up = { kind = "search", pattern = "^%?", icon = "󰩊 ", lang = "regex" },
-                filter = { pattern = "^:%s*!", icon = "󰻿 ", lang = "bash" },
-                lua = { pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" }, icon = "", lang = "lua" },
-                help = { pattern = "^:%s*he?l?p?%s+", icon = "󰞋 " },
-            }
-        },
-    })
 }
