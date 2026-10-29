@@ -30,3 +30,6 @@ brew link ffmpeg-full imagemagick-full -f --overwrite
 brew install kubectl
 brew install kubectx
 brew install kubecolor
+
+# zoxide
+brew install zoxide

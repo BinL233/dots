@@ -15,3 +15,6 @@ export EDITOR="nvim"
 
 # git
 git config --global alias.ac '!f() { git add . && git commit -m "$1"; }; f'
+
+# zoxide
+eval "$(zoxide init zsh)"
