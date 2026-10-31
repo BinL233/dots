@@ -6,10 +6,10 @@ keybind = super+down=goto_split:bottom
 
 theme = Catppuccin Macchiato
 
-background-opacity = 0.85
-background-blur = true
+background-opacity = 0.93
+background-blur = false
 
-# window-decoration = false
+window-decoration = false
 macos-option-as-alt = left
 macos-titlebar-style = hidden
 macos-window-shadow = false
@@ -29,3 +29,5 @@ keybind = ctrl+shift+down=scroll_page_lines:10
 
 keybind = super+shift+I=new_split:right
 keybind = chain=resize_split:right,500
+
+keybind = global:cmd+shift+t=new_window
